@@ -1,7 +1,7 @@
 ﻿// Задача: Написать программу, которая из имеющегося массива строк формирует новый массив из строк, 
 //         длина которых меньше, либо равна 3 символам.
 
-using System;
+
 using System.Linq;
 
 void PrintWordsArray(string[] array)
@@ -12,15 +12,16 @@ void PrintWordsArray(string[] array)
     }
 }
 
-string[] CheckWordLenthInArray(string[] array)
+string[] CheckWordLenthInArray(string[] array, int wordsCount)
 {
-    string[] result = new string[0];
+    string[] result = new string[wordsCount];
+    int index = 0;
     foreach (string item in array)
     {
         if (item.Length <= 3)
         {
-            Array.Resize(ref result, result.Length + 1);
-            result.Append(item);
+            result[index] = item;
+            index++;
         }
     }
     return result;
@@ -40,11 +41,9 @@ for (int i = 0; i < wordsAmount; i++)           // Add words to array
     wordsList[i] = Console.ReadLine();
 }
 
-string[] resultArray = CheckWordLenthinArray(wordsList);
+string[] resultArray = CheckWordLenthInArray(wordsList, wordsAmount);
 
 
-
-PrintWordsArray(wordsList);
 PrintWordsArray(resultArray);
 
 
