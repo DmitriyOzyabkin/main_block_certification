@@ -28,7 +28,7 @@ string[] CheckWordLenthInArray(string[] array)
 
 // At this block every word adds to array
 Console.WriteLine("So, first of all we should create an array with words.");
-Console.Write("How many words do you want to enter?: ");
+Console.Write("How many words do you want to enter?: "); // define length of initial array
 
 int wordsAmount = Convert.ToInt32(Console.ReadLine());
 string[] wordsList = new string[wordsAmount];
@@ -40,9 +40,11 @@ for (int i = 0; i < wordsAmount; i++)           // Add words to array
     wordsList[i] = Console.ReadLine();
 }
 
+// Using function for create result array to be outputted
+
 string[] resultArray = CheckWordLenthInArray(wordsList);
 
-
+// print result array
 PrintWordsArray(resultArray);
 
 
