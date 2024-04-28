@@ -2,8 +2,6 @@
 //         длина которых меньше, либо равна 3 символам.
 
 
-using System.Linq;
-
 void PrintWordsArray(string[] array)
 {
     foreach (string elem in array)
@@ -12,14 +10,15 @@ void PrintWordsArray(string[] array)
     }
 }
 
-string[] CheckWordLenthInArray(string[] array, int wordsCount)
+string[] CheckWordLenthInArray(string[] array)
 {
-    string[] result = new string[wordsCount];
+    string[] result = new string[0];
     int index = 0;
     foreach (string item in array)
     {
         if (item.Length <= 3)
         {
+            Array.Resize(ref result, result.Length + 1);
             result[index] = item;
             index++;
         }
@@ -27,7 +26,7 @@ string[] CheckWordLenthInArray(string[] array, int wordsCount)
     return result;
 }
 
-// At this block evry wors adds to array
+// At this block every word adds to array
 Console.WriteLine("So, first of all we should create an array with words.");
 Console.Write("How many words do you want to enter?: ");
 
@@ -41,7 +40,7 @@ for (int i = 0; i < wordsAmount; i++)           // Add words to array
     wordsList[i] = Console.ReadLine();
 }
 
-string[] resultArray = CheckWordLenthInArray(wordsList, wordsAmount);
+string[] resultArray = CheckWordLenthInArray(wordsList);
 
 
 PrintWordsArray(resultArray);
