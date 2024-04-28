@@ -2,7 +2,7 @@
 //         длина которых меньше, либо равна 3 символам.
 
 
-void PrintWordsArray(string[] array)
+void PrintWordsArray(string[] array) // Print every word in array separated by space
 {
     foreach (string elem in array)
     {
@@ -10,7 +10,7 @@ void PrintWordsArray(string[] array)
     }
 }
 
-string[] CheckWordLenthInArray(string[] array)
+string[] CheckWordLenthInArray(string[] array) // Check length of every word in initial array
 {
     string[] result = new string[0];
     int index = 0;
@@ -31,18 +31,18 @@ Console.WriteLine("So, first of all we should create an array with words.");
 Console.Write("How many words do you want to enter?: "); // define length of initial array
 
 int wordsAmount = Convert.ToInt32(Console.ReadLine());
-string[] wordsList = new string[wordsAmount];
+string[] wordsArray = new string[wordsAmount];
 Console.WriteLine("Please, enter your words one by one.");
 
 for (int i = 0; i < wordsAmount; i++)           // Add words to array
 {
     Console.Write($"Enter word {i + 1}: ");
-    wordsList[i] = Console.ReadLine();
+    wordsArray[i] = Console.ReadLine();
 }
 
 // Using function for create result array to be outputted
 
-string[] resultArray = CheckWordLenthInArray(wordsList);
+string[] resultArray = CheckWordLenthInArray(wordsArray);
 
 // print result array
 PrintWordsArray(resultArray);
